@@ -14,32 +14,23 @@
 
 inline bool gameover;
 
-enum Direction {Error = -1,Right=0,Left=1,Up=2,Down=3};
-void input_init(void);
-void input_enter_off(void);
-void input_enter_on(void);
-enum Direction get_input(void);
-
-
-
 inline char getUserInput() {
-    char input;
-    struct  termios old_settings, new_settings;
+    termios old_settings{}, new_settings{};
 
     tcgetattr(STDIN_FILENO, &old_settings);
     new_settings = old_settings;
     new_settings.c_lflag &= ~(ICANON | ECHO);
     tcsetattr(STDIN_FILENO, TCSANOW, &new_settings);
 
-    input = getchar();
+    char input = getchar();
 
     tcsetattr(STDIN_FILENO, TCSANOW, &old_settings);
 
     return input;
 }
 
-
-struct termios t;
+enum Direction {Error = -1,Right=0,Left=1,Up=2,Down=3};
+inline struct termios t;
 inline void input_enter_off(){
     {
         tcgetattr(STDIN_FILENO, &t);
@@ -78,13 +69,5 @@ inline enum Direction get_input()
     }
     return direction;
 }
-
-inline void input_init()
-{
-
-}
-
-
-
 
 #endif //INPUT_HPP
