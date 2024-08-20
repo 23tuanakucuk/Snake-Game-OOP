@@ -5,16 +5,16 @@
 #ifndef DEFINITIONS_HPP
 #define DEFINITIONS_HPP
 
-#define MAP_WIDTH 50
-#define MAP_HEIGHT 50
+#define MAP_WIDTH 40
+#define MAP_HEIGHT 40
 #define MAP_CHAR '.'
-#define MAP_END 60
+#define MAP_END 50
 #define SNAKE_CHAR 'O'
 #define SNAKE_HEAD_WEST '>'
 #define SNAKE_HEAD_NORTH 'v'
 #define SNAKE_HEAD_EAST '<'
 #define SNAKE_HEAD_SOUTH '^'
-#define BAIT_CHAR '*'
+#define BAIT_CHAR 'X'
 
 #define INITIAL_LENGTH 3
 
