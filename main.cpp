@@ -13,7 +13,6 @@ SnakeMap snake_map(&snake);
 
 void initialize()
 {
-    input_init();
     input_enter_off();
 }
 
@@ -21,7 +20,7 @@ bool is_game_end()
 {
     bool result = false;
     std::pair<int, int> snake_head = snake.snake_head;
-    if (snake_head.first < 0 || snake_head.first >= MAP_HEIGHT || snake_head.second < 0 || snake_head.second >= MAP_WIDTH)
+    if (snake_head.first < 0 || snake_head.first >= MAP_HEIGHT || snake_head.second < 0 || snake_head.second >=MAP_WIDTH)
     {
         result = true;
     }
